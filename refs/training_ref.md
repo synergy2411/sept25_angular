@@ -46,3 +46,12 @@ NodeJS: Platform
 ## Sync vs Async Code
 
 https://github.com/synergy2411/sept25_angular
+
+# TypeScript
+
+## TypeScript Project
+
+- npm create vite@latest
+- cd 02-ts-basics
+- npm install
+- npm run dev
