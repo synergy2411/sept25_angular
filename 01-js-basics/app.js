@@ -303,6 +303,7 @@
 // // CALLBACK
 // // Error First, Callback Last
 
+// Callback
 function greet(err, message) {
   if (err) {
     console.error(err);
@@ -311,6 +312,7 @@ function greet(err, message) {
   console.log(message.toUpperCase());
 }
 
+// Higher Order Function (HoF)
 function demoCallback(lang, cb) {
   if (lang == "en") {
     cb(null, "Hello There");
@@ -322,3 +324,21 @@ function demoCallback(lang, cb) {
 }
 
 demoCallback("abc", greet);
+
+let matrix = [
+  [2, 4],
+  [4, 6],
+  [6, 8],
+];
+
+let [first, second, third] = matrix;
+
+let [f1, f2] = first;
+let [s1, s2] = second;
+let [t1, t2] = third;
+
+console.log(f1, s1, t1);
+
+let [[x1, y1], [x2, y2], [x3, y3]] = matrix;
+
+console.log(y1, y2, y3);
