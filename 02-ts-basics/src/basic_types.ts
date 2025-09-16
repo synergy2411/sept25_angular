@@ -107,3 +107,23 @@ let todo: ITodo = {
 myList = [todo];
 
 console.log("List of Todos : ", myList);
+
+// // ABSENCE OF VALUES
+let varNull: null | string;
+varNull = "Some Value";
+
+let varObjectNull: undefined | { rating: number };
+varObjectNull = undefined;
+varObjectNull = {
+  rating: 98,
+};
+console.log("Rating : ", varObjectNull.rating);
+
+const square = (x: number): void => console.log(x ** 2);
+console.log("Square of 3 :  ", square(3));
+
+function demoNeverReturn(): never {
+  throw new Error("Something went wrong");
+}
+
+demoNeverReturn();
