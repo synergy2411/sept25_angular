@@ -62,22 +62,51 @@ const producer = (arr) => {
 // Promise.resolve().then(() => console.log("RESOLVED"));
 // Promise.reject().catch(() => console.error("ERROR"));
 
-function promiseFactory(data, ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(data), ms);
-  });
-}
+// function promiseFactory(data, ms) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => resolve(data), ms);
+//   });
+// }
 
-const p1 = promiseFactory("First", 1000);
-const p2 = promiseFactory("Second", 2000);
-const p3 = promiseFactory("Three", 3000);
-const p4 = Promise.reject(new Error("REJECTED"));
+// const p1 = promiseFactory("First", 1000);
+// const p2 = promiseFactory("Second", 2000);
+// const p3 = promiseFactory("Three", 3000);
+// const p4 = Promise.reject(new Error("REJECTED"));
 
-const allPromises = [p1, p2, p3, p4];
+// const allPromises = [p1, p2, p3, p4];
 
 // Promise.all(allPromises)
 //     .then(console.log)
 //     .catch(console.error);
 // Promise.allSettled(allPromises).then(console.log).catch(console.error);
 // Promise.any(allPromises).then(console.log).catch(console.error);
-Promise.race(allPromises).then(console.log).catch(console.error);
+// Promise.race(allPromises).then(console.log).catch(console.error);
+
+const btnQuoteEl = document.getElementById("btn-quote");
+
+btnQuoteEl.addEventListener("click", async function (event) {
+  event.preventDefault();
+
+  try {
+    const response = await fetch("https://api.kanye.rest");
+    const data = await response.json();
+    h5Element = document.createElement("h5");
+    h5Element.innerText = data.quote;
+    document.body.appendChild(h5Element);
+  } catch (err) {
+    console.error(err);
+  }
+
+  //   fetch("https://api.kanye.rest")
+  //     .then((response) => {
+  //       console.log("RESPONSE : ", response);
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       const h1Element = document.createElement("h1");
+  //       h1Element.innerHTML = "";
+  //       h1Element.innerHTML = data.quote;
+  //       document.body.appendChild(h1Element);
+  //     })
+  //     .catch(console.error);
+});
