@@ -72,3 +72,10 @@ https://github.com/synergy2411/sept25_angular
 ## Classes:
 
 - constructor injection
+
+## DECORATORS:
+
+- Class Level : @NgModule, @Component, @Pipe, @Directive, @Injectable
+- Property Level : @Input, @Output, @HostBinding, @ViewChild, @ContentChild
+- Method Level : @hostListener
+- Parameter Level: @Skip, @Root, @Optional
