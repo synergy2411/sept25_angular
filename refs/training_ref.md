@@ -79,3 +79,51 @@ https://github.com/synergy2411/sept25_angular
 - Property Level : @Input, @Output, @HostBinding, @ViewChild, @ContentChild
 - Method Level : @hostListener
 - Parameter Level: @Skip, @Root, @Optional
+
+# Various JavaScript Libraries and Framework
+
+- angular (F): 2014; two way binding, Components based, State Management, SPA, templates, Form Validation, quick app bootstrap; MV\* Pattern, DOM Manipulation, Animation, renderer, AoT Compiler etc
+- angularjs: v1.x; 2011; library
+- react: 35kb in size; vast fast, 2013 by Facebook Team; library; rendering UI quickly and efficiently; Virtual DOM, Diffing Algo, Reconciliation, State, Props, Components, unidirectional data flow etc;
+  : react-hook-form for Form Validation;
+  : State Management: Redux
+  : Single Page Apps: react-router
+  : fetch API, axios: Remote Server Calls
+
+- vue (F) : Progressive Framework; two way data binding, duynamic templates, Remote Server Calls, Form Validations, Single Page Apps, State Management Emerging community support
+- lodash: small library; utility functionality
+- jQuery: small library; find, change, animation, ajax calls, DOM manipulation
+- nextjs (F): react based server side framework
+- polymer: rich web based components
+- stencil: VDOM, Components based
+- backbone: MVC Pattern at client side
+- knockout: MVVM Pattern; two way data binding
+- ember (F): 2010; frequent changes in API
+
+- nest: Scalable server side apps for node platform
+- express / koa / hapi/ kraken / sailsjs : web apps framework
+- nodejs: platform
+
+## DOM: Document Object Model
+
+- hierarchical representation of the page (HTML Elements)
+
+## Angular CLI Tool
+
+- Project Structure
+- Configuration
+- Angular Artifacts (building block, classes, functionalities etc)
+
+### Angular CLI Tool Installation
+
+- [sudo] npm install @angular/cli@17 -g
+- ng version
+- ng new ng-frontend --no-standalone --no-routing
+  > stylesheet - CSS
+  > SSR - N
+- cd ng-frontend
+- npm start / ng serve
+
+### Angular CLI Tool Commands
+
+- ng g c components/users
