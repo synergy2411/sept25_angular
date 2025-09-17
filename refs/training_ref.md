@@ -47,7 +47,20 @@ NodeJS: Platform
 
 https://github.com/synergy2411/sept25_angular
 
-# TypeScript
+## Promises
+
+- Container for holding the future value
+- LifeCycle : Pending, Settled (Success / Failure)
+- Consume : then().catch() / async...await
+- Promise API: resolve, reject, race, any, all, allSettled
+
+# TypeScript : JavaScript with type syntax
+
+## Types in TypeScript
+
+- JavaScript: number, string, boolean, symbol, bigint, array, objects, date, function
+- Other DataTypes: any, unknown, void, null, never, tuple
+- Custom Types: 'type' keyword, class, interface
 
 ## TypeScript Project
 
@@ -55,3 +68,7 @@ https://github.com/synergy2411/sept25_angular
 - cd 02-ts-basics
 - npm install
 - npm run dev
+
+## Classes:
+
+- constructor injection
