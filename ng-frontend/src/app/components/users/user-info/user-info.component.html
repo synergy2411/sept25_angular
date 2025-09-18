@@ -1,5 +1,5 @@
-<h3>{{ user.firstName }} {{ user.lastName }}</h3>
-<p>Date of Birth : <span [innerText]="user.dob"></span></p>
+<ng-content select=".user-name"></ng-content>
+
 <p>
   Total Votes : {{ user.votes }}
   <input
@@ -11,3 +11,5 @@
 
   <input type="number" [(ngModel)]="user.votes" />
 </p>
+
+<ng-content select="p"></ng-content>

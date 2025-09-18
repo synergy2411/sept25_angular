@@ -129,6 +129,8 @@ https://github.com/synergy2411/sept25_angular
 - ng g c components/users
 - ng g c components/users/user-img (html, css, spec, ts)
 - ng g c components/users/user-info
+- ng g c components/ui/button
+- ng g c components/playground/life-cycle
 
 # Bootstrap Library
 
