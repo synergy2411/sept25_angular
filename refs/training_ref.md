@@ -127,6 +127,8 @@ https://github.com/synergy2411/sept25_angular
 ### Angular CLI Tool Commands
 
 - ng g c components/users
+- ng g c components/users/user-img (html, css, spec, ts)
+- ng g c components/users/user-info
 
 # Bootstrap Library
 

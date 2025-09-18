@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.2.3" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.2.3" pages="3">
   <diagram name="Page-1" id="C9C86ICiYXPJqEdUbb66">
     <mxGraphModel dx="599" dy="337" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -82,8 +82,49 @@
         <mxCell id="t--C47-ZsDoRhNLkjjPz-9" value="( Event Binding )" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="390" y="252" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="t--C47-ZsDoRhNLkjjPz-10" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="265" y="308" width="50" height="30" as="geometry" />
+        <mxCell id="t--C47-ZsDoRhNLkjjPz-10" value="2 way data binding = PB + EB&lt;div&gt;Banana in the Box = [ ( ngModel ) ]&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="185" y="303" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Zr69eRBPpiTz3g2hn9H6" name="Page-3">
+    <mxGraphModel dx="668" dy="376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-1" value="Nested Component Communication" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="375" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BrYFn9-QAHqjKM3JLirK-2" target="BrYFn9-QAHqjKM3JLirK-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-2" value="Parent&lt;div&gt;(UsersComp)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="BrYFn9-QAHqjKM3JLirK-3" target="BrYFn9-QAHqjKM3JLirK-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-3" value="Child&lt;div&gt;(UserImageComp)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-5" value="@Input()" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="245" y="408" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-6" value="[ Property Binding ]&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="180" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-7" value="user model" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="270" y="150" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-9" value="@Output()" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="398" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-10" value="( Event Binding )" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="485" y="165" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BrYFn9-QAHqjKM3JLirK-11" value="EventEmitter Class" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="428" width="130" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
