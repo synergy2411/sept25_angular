@@ -127,3 +127,9 @@ https://github.com/synergy2411/sept25_angular
 ### Angular CLI Tool Commands
 
 - ng g c components/users
+
+# Bootstrap Library
+
+> npm install bootstrap
+> modify style property in angular.json file
+> Add Bootstrap extension from market place in VS Code
