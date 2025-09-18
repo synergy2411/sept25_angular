@@ -8,10 +8,10 @@ import { USER_DATA } from '../../models/mocks';
   styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit {
-  user!: IUser;
+  users!: Array<IUser>;
 
   ngOnInit(): void {
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
 
   constructor() {}
