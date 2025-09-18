@@ -16,7 +16,7 @@ export class UsersComponent {
     avatar: './assets/images/bill.jpeg',
   };
 
-  onMoreInfo(lastName: string, company: string) {
-    alert(`Mr. ${lastName} works with ${company}!!`);
+  onMoreInfo(user: any) {
+    alert(`Mr. ${user.lastName} works with ${user.company}!!`);
   }
 }
