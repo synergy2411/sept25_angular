@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IUser } from '../../models/user-model';
 
 @Component({
   selector: 'app-users',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
-  user = {
+  user: IUser = {
     firstName: 'Bill',
     lastName: 'Gates',
     dob: new Date('Dec 12, 1975'),
@@ -16,7 +17,7 @@ export class UsersComponent {
     avatar: './assets/images/bill.jpeg',
   };
 
-  onMoreInfo(user: any) {
+  onMoreInfo(user: IUser) {
     alert(`Mr. ${user.lastName} works with ${user.company}!!`);
   }
 }
