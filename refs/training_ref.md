@@ -172,3 +172,5 @@ let frineds = ["Monica", "Ross", "Joey"]
 friends.push("Chandler"); // Impure Change
 
 friends = [...friends, "Chandler"] // Pure change
+
+## Challenge : sort the filtered todo items

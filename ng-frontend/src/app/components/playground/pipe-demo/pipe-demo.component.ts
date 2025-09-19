@@ -22,12 +22,12 @@ export class PipeDemoComponent {
   ];
 
   onAddItem() {
-    this.todoCollection.push({ label: 'New Todo Item', status: 'pending' });
+    // this.todoCollection.push({ label: 'New Todo Item', status: 'pending' });
 
-    // this.todoCollection = [
-    //   ...this.todoCollection,
-    //   { label: 'New Todo Item', status: 'pending' },
-    // ];
+    this.todoCollection = [
+      ...this.todoCollection,
+      { label: 'New Todo Item', status: 'pending' },
+    ];
 
     console.log('Collection Lenght : ', this.todoCollection.length);
   }

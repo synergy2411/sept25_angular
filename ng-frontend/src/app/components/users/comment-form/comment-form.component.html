@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-8 offset-2">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center">Add Your Comment Here</h4>
+      </div>
+      <div class="card-body">
+        <form #commentForm="ngForm" (submit)="submitForm(commentForm)">
+          <!-- stars -->
+          <div class="mb-3">
+            <label for="" class="form-label">Stars</label>
+            <select class="form-select form-select-lg" name="stars" ngModel>
+              <option selected>Select one</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <!-- body -->
+          <div class="mb-3">
+            <label for="body" class="form-label">Your Message</label>
+            <textarea
+              class="form-control"
+              name="body"
+              rows="5"
+              ngModel
+              required
+              minlength="6"
+            ></textarea>
+          </div>
+
+          <!-- author -->
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="author"
+              placeholder=""
+              ngModel
+              required
+              email
+              #author="ngModel"
+            />
+            <label for="formId1">Your Email</label>
+
+            <!-- Error Messages -->
+            <!-- <div *ngIf="author.touched && author.dirty">
+              <div *ngIf="author.hasError('email')">
+                <p>Author field should have valid email</p>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- Buttons -->
+          <div class="row">
+            <div class="col">
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">
+                  Add Comment
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-grid">
+                <button class="btn btn-secondary">Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
