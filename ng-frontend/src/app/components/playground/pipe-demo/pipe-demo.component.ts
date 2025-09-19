@@ -11,4 +11,24 @@ export class PipeDemoComponent {
   });
 
   contactNumber = 9876543210;
+
+  filteredStatus = '';
+
+  todoCollection = [
+    { label: 'buy the grocery', status: 'pending' },
+    { label: 'renew car insurance', status: 'completed' },
+    { label: 'pot the plants', status: 'pending' },
+    { label: 'clean the carpet', status: 'pending' },
+  ];
+
+  onAddItem() {
+    this.todoCollection.push({ label: 'New Todo Item', status: 'pending' });
+
+    // this.todoCollection = [
+    //   ...this.todoCollection,
+    //   { label: 'New Todo Item', status: 'pending' },
+    // ];
+
+    console.log('Collection Lenght : ', this.todoCollection.length);
+  }
 }

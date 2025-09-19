@@ -27,3 +27,6 @@ export class CountryCodePipe implements PipeTransform {
     return code + ' ' + value;
   }
 }
+
+// Reverse the string
+// "Hello".split("").reverse().join("")

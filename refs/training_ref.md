@@ -158,3 +158,17 @@ https://github.com/synergy2411/sept25_angular
 # Custom Pipe
 
 > ng g p pipes/country-code
+
+## By default, all custom pipes are pure, runs on pure changes
+
+let user = { name : "Monica" }
+
+user.name = "Ross"; // Impure change
+
+user = { name : "Joey" } // Pure change
+
+let frineds = ["Monica", "Ross", "Joey"]
+
+friends.push("Chandler"); // Impure Change
+
+friends = [...friends, "Chandler"] // Pure change

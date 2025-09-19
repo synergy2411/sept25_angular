@@ -3,3 +3,31 @@
 <h4>Future Value : {{ futureValue | async }}</h4>
 
 <h4>Contact Number : {{ contactNumber | countryCode : "USA" }}</h4>
+
+<h4>Reverse Content : {{ "Hello World" | reverse }}</h4>
+<hr />
+
+<div class="row">
+  <div class="col-6">
+    <div class="d-grid">
+      <button class="btn btn-primary" (click)="onAddItem()">Add</button>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <select class="form-control" [(ngModel)]="filteredStatus">
+      <option value="">Select the option</option>
+      <option value="completed">Completed Todo</option>
+      <option value="pending">Pending Todo</option>
+    </select>
+  </div>
+</div>
+
+<ul class="list-group">
+  <li
+    *ngFor="let todo of todoCollection | filter : filteredStatus"
+    class="list-group-item m-1 p-3"
+  >
+    {{ todo.status | uppercase }} - {{ todo.label | titlecase }}
+  </li>
+</ul>
