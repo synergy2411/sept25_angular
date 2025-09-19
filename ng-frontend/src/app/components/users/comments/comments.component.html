@@ -1,0 +1,35 @@
+<div class="row">
+  <!-- links -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a (click)="tab = 1" class="nav-link">All Comments</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="tab = 2" class="nav-link">Add Comment</a>
+    </li>
+  </ul>
+  <!-- tabs -->
+  <div class="row">
+    <div [ngSwitch]="tab">
+      <div *ngSwitchCase="1">
+        <ul *ngIf="comments.length > 0; else noCommentsTemplate">
+          <li *ngFor="let comment of comments">
+            <em>Stars : {{ comment.stars }}</em>
+            <blockquote>
+              {{ comment.body }} <cite> - {{ comment.author }}</cite>
+            </blockquote>
+          </li>
+        </ul>
+        <ng-template #noCommentsTemplate>
+          <h5>Be the first to comment for this user.</h5>
+        </ng-template>
+      </div>
+      <div *ngSwitchCase="2">
+        <h5>Comment Form coming soon...</h5>
+      </div>
+      <div *ngSwitchDefault>
+        <p>Default Case</p>
+      </div>
+    </div>
+  </div>
+</div>

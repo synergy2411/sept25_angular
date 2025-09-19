@@ -8,6 +8,7 @@ import { UserImgComponent } from './components/users/user-img/user-img.component
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { ButtonComponent } from './components/ui/button/button.component';
 import { LifeCycleComponent } from './components/playground/life-cycle/life-cycle.component';
+import { CommentsComponent } from './components/users/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LifeCycleComponent } from './components/playground/life-cycle/life-cycl
     UserInfoComponent,
     ButtonComponent,
     LifeCycleComponent,
+    CommentsComponent,
   ],
   imports: [
     // Modules

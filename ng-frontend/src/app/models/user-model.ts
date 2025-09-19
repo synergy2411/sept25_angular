@@ -1,3 +1,5 @@
+import { IComment } from './comment-model';
+
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -6,4 +8,5 @@ export interface IUser {
   isWorking: boolean;
   votes: number;
   avatar: string;
+  comments: Array<IComment>;
 }

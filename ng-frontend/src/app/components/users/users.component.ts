@@ -9,6 +9,7 @@ import { USER_DATA } from '../../models/mocks';
 })
 export class UsersComponent implements OnInit {
   users!: Array<IUser>;
+  tab = 0;
 
   ngOnInit(): void {
     this.users = USER_DATA;
