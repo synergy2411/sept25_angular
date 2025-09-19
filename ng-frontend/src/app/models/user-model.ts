@@ -6,6 +6,7 @@ export interface IUser {
   dob: Date;
   company: string;
   isWorking: boolean;
+  income: number;
   votes: number;
   avatar: string;
   comments: Array<IComment>;

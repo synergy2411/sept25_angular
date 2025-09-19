@@ -10,6 +10,8 @@ import { ButtonComponent } from './components/ui/button/button.component';
 import { LifeCycleComponent } from './components/playground/life-cycle/life-cycle.component';
 import { CommentsComponent } from './components/users/comments/comments.component';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { PipeDemoComponent } from './components/playground/pipe-demo/pipe-demo.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { BetterHighlightDirective } from './directives/better-highlight.directiv
     LifeCycleComponent,
     CommentsComponent,
     BetterHighlightDirective,
+    PipeDemoComponent,
+    CountryCodePipe,
   ],
   imports: [
     // Modules

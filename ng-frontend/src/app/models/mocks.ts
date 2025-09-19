@@ -7,6 +7,7 @@ export const USER_DATA: Array<IUser> = [
     dob: new Date('Dec 12, 1975'),
     company: 'Microsoft',
     isWorking: true,
+    income: 50000,
     votes: 120,
     avatar: './assets/images/bill.jpeg',
     comments: [
@@ -21,6 +22,7 @@ export const USER_DATA: Array<IUser> = [
     dob: new Date('jan 3, 1968'),
     company: 'Apple',
     isWorking: false,
+    income: 0,
     votes: 180,
     avatar: './assets/images/steve.jpeg',
     comments: [
@@ -34,6 +36,7 @@ export const USER_DATA: Array<IUser> = [
     dob: new Date('Aug 2, 1972'),
     company: 'World Wide Web',
     isWorking: true,
+    income: 25000,
     votes: 110,
     avatar: './assets/images/tim.jpeg',
     comments: [],

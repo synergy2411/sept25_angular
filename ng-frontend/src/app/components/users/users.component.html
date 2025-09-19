@@ -26,16 +26,17 @@
         <p>Is this Even element : {{ isEven }}</p>
         <p>Is this Odd element : {{ isOdd }}</p> -->
         <app-user-info [user]="user">
-          <h3 appBetterHighlight favColor="blue" class="user-name">
-            {{ user.firstName }} {{ user.lastName }}
+          <h3 appBetterHighlight favColor="gold" class="user-name">
+            {{ user.firstName | titlecase }} {{ user.lastName | titlecase }}
           </h3>
 
           <p *ngIf="user.isWorking; else notWorkingTemplate">
-            Mr. {{ user.lastName }} is working with {{ user.company }}.
+            Mr. {{ user.lastName | titlecase }} is working with
+            {{ user.company | uppercase }}.
           </p>
 
           <ng-template #notWorkingTemplate>
-            <p>Mr. {{ user.lastName }} is not working now.</p>
+            <p>Mr. {{ user.lastName | titlecase }} is not working now.</p>
           </ng-template>
         </app-user-info>
       </div>

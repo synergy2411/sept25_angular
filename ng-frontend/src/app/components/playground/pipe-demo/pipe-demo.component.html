@@ -1,0 +1,5 @@
+<h1>{{ "Pipe Demo Component" | lowercase | titlecase | uppercase }}</h1>
+
+<h4>Future Value : {{ futureValue | async }}</h4>
+
+<h4>Contact Number : {{ contactNumber | countryCode : "USA" }}</h4>

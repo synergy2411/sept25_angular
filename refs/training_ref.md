@@ -150,3 +150,11 @@ https://github.com/synergy2411/sept25_angular
 
 - Structural Directives: *ngIf, *ngFor, \*ngSwitch
 - Attributes Directives: ngStyle, ngClass
+
+## Custom Directive
+
+> ng g d directives/better-highlight
+
+# Custom Pipe
+
+> ng g p pipes/country-code

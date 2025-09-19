@@ -1,12 +1,18 @@
 <ng-content select=".user-name"></ng-content>
 
+<!-- {{ user | json }} -->
+
+<!-- <p>Number : {{ 123.456789 | number : "2.1-2" }}</p> -->
+
 <p
   [ngStyle]="dynamicStyle"
   (mouseenter)="onChangeStyle()"
   (mouseleave)="onResetStyle()"
 >
-  Date of Birth : <span [innerText]="user.dob"></span>
+  Date of Birth : <span [innerText]="user.dob | date : 'MMM dd, yyyy'"></span>
 </p>
+
+<p>Income : <span [innerText]="user.income | currency : 'INR'"></span></p>
 
 <p
   [ngClass]="dynamicClasses"
