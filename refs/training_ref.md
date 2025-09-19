@@ -137,3 +137,16 @@ https://github.com/synergy2411/sept25_angular
 > npm install bootstrap
 > modify style property in angular.json file
 > Add Bootstrap extension from market place in VS Code
+
+# Component Reusable -
+
+- @Input()
+- @Output() + EventEmitter
+- Content Project [ng-content]
+
+## Component LifeCycle
+
+# Directive: marker on the UI
+
+- Structural Directives: *ngIf, *ngFor, \*ngSwitch
+- Attributes Directives: ngStyle, ngClass

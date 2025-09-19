@@ -1,6 +1,18 @@
 <ng-content select=".user-name"></ng-content>
 
-<p>
+<p
+  [ngStyle]="dynamicStyle"
+  (mouseenter)="onChangeStyle()"
+  (mouseleave)="onResetStyle()"
+>
+  Date of Birth : <span [innerText]="user.dob"></span>
+</p>
+
+<p
+  [ngClass]="dynamicClasses"
+  (mouseenter)="onToggleClasses()"
+  (mouseleave)="onToggleClasses()"
+>
   Total Votes : {{ user.votes }}
   <input
     type="number"

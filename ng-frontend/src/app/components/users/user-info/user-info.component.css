@@ -1,0 +1,8 @@
+.feature {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.my-border {
+  border: #ff45ff 2px dashed;
+}
