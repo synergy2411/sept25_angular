@@ -34,7 +34,7 @@
           <!-- password -->
           <div class="form-floating mb-3">
             <input
-              type="password"
+              type="text"
               class="form-control"
               name="password"
               id="password"
@@ -53,6 +53,46 @@
               <p class="alert alert-danger">
                 Password field should contain at least 6 characters
               </p>
+            </div>
+            <div *ngIf="password.hasError('exclamationError')">
+              <p class="alert alert-danger">
+                Password field should contain exclamation mark (!).
+              </p>
+            </div>
+          </div>
+
+          <!-- hobbies : FormArray-->
+          <div formArrayName="hobbies" class="mb-3">
+            <button
+              class="btn btn-info"
+              (click)="onAddNewHobby()"
+              type="button"
+            >
+              Add Hobby
+            </button>
+            <div *ngFor="let hobby of hobbies.controls; let i = index">
+              <div [formGroupName]="i" class="mb-2">
+                <div class="row">
+                  <div class="col-4">
+                    <input
+                      type="text"
+                      name="name"
+                      formControlName="name"
+                      class="form-control"
+                      placeholder="hobby name"
+                    />
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="number"
+                      name="frequency"
+                      formControlName="frequency"
+                      class="form-control"
+                      placeholder="frequency"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

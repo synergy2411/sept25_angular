@@ -4,6 +4,9 @@ import {
   FormGroup,
   FormBuilder,
   Validators,
+  AbstractControl,
+  ValidationErrors,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -21,7 +24,9 @@ export class RegisterComponent {
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
+        RegisterComponent.containExclamationMark,
       ]),
+      hobbies: new FormArray([]),
     });
   }
 
@@ -33,9 +38,34 @@ export class RegisterComponent {
     return this.registerForm.get('password') as FormControl;
   }
 
+  get hobbies() {
+    return this.registerForm.get('hobbies') as FormArray;
+  }
+
+  newHobby() {
+    return new FormGroup({
+      name: new FormControl(),
+      frequency: new FormControl(),
+    });
+  }
+
+  onAddNewHobby() {
+    this.hobbies.push(this.newHobby());
+  }
+
   onSubmit() {
     // console.log('Username : ', this.registerForm.value.username);
     // console.log('Password : ', this.registerForm.value.password);
     console.log(this.registerForm.value);
   }
+
+  // Custom Validator
+  static containExclamationMark(
+    control: AbstractControl
+  ): null | ValidationErrors {
+    const hasExclamationMark = control.value.indexOf('!') >= 0;
+    return hasExclamationMark ? null : { exclamationError: true };
+  }
 }
+
+// CHALLENGE : Create custom validator for confirm password field that should match the value with password field
