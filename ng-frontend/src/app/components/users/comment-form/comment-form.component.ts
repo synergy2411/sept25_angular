@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { IComment } from '../../../models/comment-model';
 
 @Component({
   selector: 'app-comment-form',
@@ -7,6 +8,8 @@ import { NgForm } from '@angular/forms';
   styleUrl: './comment-form.component.css',
 })
 export class CommentFormComponent {
+  @Output() commentEvent = new EventEmitter<IComment>();
+
   // @ViewChild('commentForm') theForm!: NgForm;
 
   // submitForm() {
@@ -19,6 +22,6 @@ export class CommentFormComponent {
       ...commentForm.value,
       stars: +commentForm.value.stars,
     };
-    console.log(newComment);
+    this.commentEvent.emit(newComment);
   }
 }

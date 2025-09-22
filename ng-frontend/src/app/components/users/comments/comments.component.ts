@@ -9,5 +9,10 @@ import { IComment } from '../../../models/comment-model';
 export class CommentsComponent {
   @Input() comments!: Array<IComment>;
 
-  tab = 2;
+  tab = 0;
+
+  onAddNewComment(comment: IComment) {
+    this.comments.push(comment);
+    this.tab = 1;
+  }
 }
