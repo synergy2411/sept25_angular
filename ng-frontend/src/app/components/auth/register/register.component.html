@@ -5,17 +5,30 @@
         <h4 class="text-center">User Registration</h4>
       </div>
       <div class="card-body">
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <!-- email -->
           <div class="form-floating mb-3">
             <input
-              type="email"
+              type="text"
               class="form-control"
               name="username"
               id="username"
               placeholder=""
+              formControlName="username"
             />
             <label for="username">Email</label>
+          </div>
+
+          <!-- Error Messages -->
+          <div *ngIf="username.errors && (username.dirty || username.touched)">
+            <div *ngIf="username.hasError('required')">
+              <p class="alert alert-danger">User name field is mandatory</p>
+            </div>
+            <div *ngIf="username.hasError('email')">
+              <p class="alert alert-danger">
+                User name field should contain proper email format
+              </p>
+            </div>
           </div>
 
           <!-- password -->
@@ -26,20 +39,39 @@
               name="password"
               id="password"
               placeholder=""
+              formControlName="password"
             />
             <label for="password">Password</label>
+          </div>
+
+          <!-- Password - Error Messages -->
+          <div *ngIf="password.errors && (password.dirty || password.touched)">
+            <div *ngIf="password.hasError('required')">
+              <p class="alert alert-danger">Password field is mandatory</p>
+            </div>
+            <div *ngIf="password.hasError('minlength')">
+              <p class="alert alert-danger">
+                Password field should contain at least 6 characters
+              </p>
+            </div>
           </div>
 
           <!-- buttons -->
           <div class="row">
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-success">Register</button>
+                <button
+                  type="submit"
+                  [disabled]="!registerForm.valid"
+                  class="btn btn-success"
+                >
+                  Register
+                </button>
               </div>
             </div>
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-secondary">Reset</button>
+                <button type="button" class="btn btn-secondary">Reset</button>
               </div>
             </div>
           </div>
