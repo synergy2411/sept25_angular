@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IUser } from '../../models/user-model';
-import { USER_DATA } from '../../models/mocks';
+import { DataService } from '../../services/data.service';
+// import { USER_DATA } from '../../models/mocks';
 
 @Component({
   selector: 'app-users',
@@ -11,11 +12,11 @@ export class UsersComponent implements OnInit {
   users!: Array<IUser>;
   tab = 0;
 
-  ngOnInit(): void {
-    this.users = USER_DATA;
-  }
+  constructor(private dataService: DataService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.users = this.dataService.getUserdata();
+  }
 
   onMoreInfo(user: IUser) {
     alert(`Mr. ${user.lastName} works with ${user.company}!!`);

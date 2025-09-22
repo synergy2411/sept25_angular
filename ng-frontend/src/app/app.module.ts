@@ -16,6 +16,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './components/users/comment-form/comment-form.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [

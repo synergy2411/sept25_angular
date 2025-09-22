@@ -194,10 +194,33 @@ friends = [...friends, "Chandler"] // Pure change
 # Forms : accepts user inputs
 
 - Template Driven
+
+  > App logic inside template
+  > HTML5 validations
+  > Template is created asynchronously
+  > Static
+  > Easy to create
+
 - Reactive Form / Model Driven Form
+
+  > App logic inside component class
+  > Angular Validations
+  > Synchronous Form
+  > Dynamically generated
+  > Uses of various Angular built-in Classes - FormControl, FormGroup, FormBuilder, FormArray, Validators etc
+
+  > FormControl : individual form element
+  > FormGroup : the form itself
+  > FormBuilder : build the form with form controls
+  > FormArray : array of FormControl as well as FormGroup
+  > : hobbies : [{name : "", frequency : ""}, {}, {}]
 
 ## Form / Form Elements - State and Classes
 
 - ngTouched / ngUntouched
 - ngDirty / ngPristine
 - ngValid / ngInvalid
+
+# Services :
+
+> ng g s services/data
