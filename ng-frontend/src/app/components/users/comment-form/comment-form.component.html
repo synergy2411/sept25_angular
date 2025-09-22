@@ -29,7 +29,17 @@
               ngModel
               required
               minlength="6"
+              #body="ngModel"
             ></textarea>
+          </div>
+          <!-- body field - Validation and Error Messages -->
+          <div *ngIf="body.errors && (body.touched || body.dirty)">
+            <p *ngIf="body.hasError('required')" class="alert alert-danger">
+              Please fill some values in message box.
+            </p>
+            <p *ngIf="body.hasError('minlength')" class="alert alert-danger">
+              Message box should contain at least 6 characters
+            </p>
           </div>
 
           <!-- author -->
@@ -45,27 +55,41 @@
               #author="ngModel"
             />
             <label for="formId1">Your Email</label>
-
-            <!-- Error Messages -->
-            <!-- <div *ngIf="author.touched && author.dirty">
-              <div *ngIf="author.hasError('email')">
-                <p>Author field should have valid email</p>
-              </div>
-            </div> -->
           </div>
 
+          <!-- body field - Validation and Error Messages -->
+          <div *ngIf="author.errors && (author.dirty || author.touched)">
+            <p class="alert alert-danger" *ngIf="author.hasError('required')">
+              Author is mandatory field
+            </p>
+            <p class="alert alert-danger" *ngIf="author.hasError('email')">
+              Author filed should contain proper email format
+            </p>
+          </div>
+
+          <!-- <p>Form Status : {{ commentForm.valid }}</p> -->
           <!-- Buttons -->
           <div class="row">
             <div class="col">
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary">
+                <button
+                  [disabled]="!commentForm.valid"
+                  type="submit"
+                  class="btn btn-primary"
+                >
                   Add Comment
                 </button>
               </div>
             </div>
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-secondary">Reset</button>
+                <button
+                  type="button"
+                  (click)="commentForm.reset()"
+                  class="btn btn-secondary"
+                >
+                  Reset
+                </button>
               </div>
             </div>
           </div>

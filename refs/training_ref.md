@@ -155,11 +155,27 @@ https://github.com/synergy2411/sept25_angular
 
 > ng g d directives/better-highlight
 
-# Custom Pipe
+# Pipes : Format the UI
+
+- currency
+- date
+- uppercase
+- lowercase
+- titlecase
+- async
+- json
+- number
+- percent
+
+## Custom Pipe
+
+- CountryCodePipe
+- ReversePipe
+- FilterPipe
 
 > ng g p pipes/country-code
 
-## By default, all custom pipes are pure, runs on pure changes
+### By default, all custom pipes are pure, runs on pure changes
 
 let user = { name : "Monica" }
 
@@ -173,4 +189,15 @@ friends.push("Chandler"); // Impure Change
 
 friends = [...friends, "Chandler"] // Pure change
 
-## Challenge : sort the filtered todo items
+### Challenge : sort the filtered todo items
+
+# Forms : accepts user inputs
+
+- Template Driven
+- Reactive Form / Model Driven Form
+
+## Form / Form Elements - State and Classes
+
+- ngTouched / ngUntouched
+- ngDirty / ngPristine
+- ngValid / ngInvalid

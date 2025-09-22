@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,12 @@ import { NgForm } from '@angular/forms';
   styleUrl: './comment-form.component.css',
 })
 export class CommentFormComponent {
+  // @ViewChild('commentForm') theForm!: NgForm;
+
+  // submitForm() {
+  // console.log(this.theForm);
+  // }
+
   submitForm(commentForm: NgForm) {
     // console.log(commentForm);
     let newComment = {
