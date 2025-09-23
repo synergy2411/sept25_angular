@@ -17,6 +17,10 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './components/users/comment-form/comment-form.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DataService } from './services/data.service';
+import { CounterOneComponent } from './components/playground/counter/counter-one/counter-one.component';
+import { CounterTwoComponent } from './components/playground/counter/counter-two/counter-two.component';
+import { CounterService } from './services/counter.service';
+import { ObservableDemoComponent } from './components/playground/observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,9 @@ import { DataService } from './services/data.service';
     FilterPipe,
     CommentFormComponent,
     RegisterComponent,
+    CounterOneComponent,
+    CounterTwoComponent,
+    ObservableDemoComponent,
   ],
   imports: [
     // Modules
@@ -42,7 +49,7 @@ import { DataService } from './services/data.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [], // Services Registration
+  providers: [CounterService], // Services Registration
   bootstrap: [AppComponent],
 })
 export class AppModule {}
