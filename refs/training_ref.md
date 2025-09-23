@@ -262,3 +262,10 @@ friends = [...friends, "Chandler"] // Pure change
 - can't cancel in-between
 
 ## Hot and Cold Observables
+
+# HTTP Client
+
+## REST API
+
+- https://api.genderize.io/?name=peter
+- https://api.agify.io/?name=pankaj

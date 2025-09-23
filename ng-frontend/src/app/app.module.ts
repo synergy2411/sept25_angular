@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { ButtonComponent } from './components/ui/button/button.component';
@@ -21,6 +22,8 @@ import { CounterOneComponent } from './components/playground/counter/counter-one
 import { CounterTwoComponent } from './components/playground/counter/counter-two/counter-two.component';
 import { CounterService } from './services/counter.service';
 import { ObservableDemoComponent } from './components/playground/observable-demo/observable-demo.component';
+import { UserBioService } from './services/user-bio.service';
+import { UserBioComponent } from './components/playground/user-bio/user-bio.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +45,14 @@ import { ObservableDemoComponent } from './components/playground/observable-demo
     CounterOneComponent,
     CounterTwoComponent,
     ObservableDemoComponent,
+    UserBioComponent,
   ],
   imports: [
     // Modules
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [CounterService], // Services Registration
   bootstrap: [AppComponent],
