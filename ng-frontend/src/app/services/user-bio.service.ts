@@ -11,13 +11,13 @@ export class UserBioService {
 
   constructor(private http: HttpClient) {}
 
-  getUserGender(username: string): Observable<{ gender: string }> {
+  getUserGender(username: string | null): Observable<{ gender: string }> {
     return this.http.get<{ gender: string }>(
       `${this.genderURL}?name=${username}`
     );
   }
 
-  getUserAge(username: string): Observable<{ age: number }> {
+  getUserAge(username: string | null): Observable<{ age: number }> {
     return this.http.get<{ age: number }>(`${this.ageURL}?name=${username}`);
   }
 }
