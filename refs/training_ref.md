@@ -260,3 +260,5 @@ friends = [...friends, "Chandler"] // Pure change
 - eagerly executed
 - no operator support
 - can't cancel in-between
+
+## Hot and Cold Observables

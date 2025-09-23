@@ -11,7 +11,12 @@ import {
   take,
   skip,
   tap,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
 } from 'rxjs';
+import { AsyncScheduler } from 'rxjs/internal/scheduler/AsyncScheduler';
 
 @Component({
   selector: 'app-observable-demo',
@@ -53,7 +58,7 @@ export class ObservableDemoComponent implements OnInit {
   fromEvent$ = fromEvent(document.body, 'click');
 
   ngOnInit(): void {
-    this.fromEvent$.subscribe(console.log);
+    // this.fromEvent$.subscribe(console.log);
   }
 
   onOfSubscribe() {
@@ -84,5 +89,26 @@ export class ObservableDemoComponent implements OnInit {
 
   onIntervalUnsubscribe() {
     this.unsub$.unsubscribe();
+  }
+
+  onSubjectClick() {
+    // const subject = new Subject();
+    // const subject = new BehaviorSubject(100);     // Last emitted value becomes the seed value
+    // const subject = new ReplaySubject(1); // Replays last n number of emitted values
+    const subject = new AsyncSubject(); // only last emitted value upon completion
+
+    subject.subscribe((value) => console.log('Subs 1 : ', value));
+    subject.subscribe((value) => console.log('Subs 2 : ', value));
+
+    subject.next(99);
+    subject.next(101);
+
+    subject.subscribe((value) => console.log('Subs 3 : ', value));
+
+    subject.next(102);
+
+    subject.subscribe((value) => console.log('Subs 4 : ', value));
+
+    subject.complete();
   }
 }
