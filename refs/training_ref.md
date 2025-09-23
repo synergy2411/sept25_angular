@@ -269,3 +269,9 @@ friends = [...friends, "Chandler"] // Pure change
 
 - https://api.genderize.io/?name=peter
 - https://api.agify.io/?name=pankaj
+
+## Install JSON Server
+
+> npm install json-server@0.17.4 -g
+> json-server -v
+> json-server --watch db.json [from data folder]

@@ -18,9 +18,12 @@ export class UserBioComponent implements OnInit {
 
   ngOnInit(): void {
     this.username.valueChanges.pipe(debounceTime(2000)).subscribe((value) => {
-      this.bioService
-        .getUserGender(value)
-        .subscribe((bio) => (this.gender = bio.gender));
+      this.toggle = false;
+
+      this.bioService.getUserGender(value).subscribe((bio) => {
+        this.toggle = true;
+        this.gender = bio.gender;
+      });
     });
   }
 
