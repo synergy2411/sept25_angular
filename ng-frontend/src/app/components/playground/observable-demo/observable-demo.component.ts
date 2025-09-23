@@ -1,5 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Subscription, from, of, fromEvent, Observable } from 'rxjs';
+import {
+  interval,
+  Subscription,
+  from,
+  of,
+  fromEvent,
+  Observable,
+  map,
+  filter,
+  take,
+  skip,
+  tap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo',
@@ -55,11 +67,19 @@ export class ObservableDemoComponent implements OnInit {
   }
 
   onIntervalSubscribe() {
-    this.unsub$ = this.interval$.subscribe({
-      next: (data) => console.log(data),
-      error: (err) => console.log(err),
-      complete: () => console.log('[COMPLETED]'),
-    });
+    this.unsub$ = this.interval$
+      .pipe(
+        tap((value) => console.log('[TAP]', value)),
+        filter((value) => value % 2 === 0),
+        map((value) => value ** 2),
+        take(5),
+        skip(2)
+      )
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (err) => console.log(err),
+        complete: () => console.log('[COMPLETED]'),
+      });
   }
 
   onIntervalUnsubscribe() {

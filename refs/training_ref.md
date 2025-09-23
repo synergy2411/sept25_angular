@@ -204,9 +204,9 @@ friends = [...friends, "Chandler"] // Pure change
 - Reactive Form / Model Driven Form
 
   > App logic inside component class
-  > Angular Validations
+  > Angular Validations - Validators
   > Synchronous Form
-  > Dynamically generated
+  > Dynamically generated - FormArray
   > Uses of various Angular built-in Classes - FormControl, FormGroup, FormBuilder, FormArray, Validators etc
 
   > FormControl : individual form element
@@ -223,4 +223,40 @@ friends = [...friends, "Chandler"] // Pure change
 
 # Services :
 
+- Injectable
+- Dependency Injection
+- Loose Coupling
+- Singleton Injector
+- Frontend Business Logic - State of the app, Remote Server Call, Logging etc
+- 'Tree-shaking'
+
 > ng g s services/data
+> ng g s services/counter
+
+## Service Singleton Effect Demo
+
+- CounterOneComp
+- CounterTwoComp
+- CounterService: counter = 0
+
+# RxJS
+
+## Observables vs Promises
+
+### Observables
+
+- series of data / events
+- both Async and Sync
+- PubSub Pattern
+- Powerful operators support
+- Lazy, by default
+- can be multi-casted
+- cancelable, anytime
+
+### Promises
+
+- are on shot
+- only Async
+- eagerly executed
+- no operator support
+- can't cancel in-between
