@@ -18,6 +18,9 @@
 
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenseCollection">
-    <app-expense-item [expense]="expense"></app-expense-item>
+    <app-expense-item
+      (onDeleteEvent)="onDeleteExpense($event)"
+      [expense]="expense"
+    ></app-expense-item>
   </div>
 </div>

@@ -239,7 +239,11 @@ friends = [...friends, "Chandler"] // Pure change
 - CounterTwoComp
 - CounterService: counter = 0
 
-# RxJS
+# RxJS : Reactive Extension for JavaScript
+
+- Observables : XHR Call, Accepting the user input
+- Powerful Operators: Creational, Transforming, Filtering, Error Handling (catchError, throwError), Utility (tap) etc
+- Subjects: are both observables as well as observer; multicasted
 
 ## Observables vs Promises
 
@@ -263,7 +267,7 @@ friends = [...friends, "Chandler"] // Pure change
 
 ## Hot and Cold Observables
 
-# HTTP Client
+# HTTP Client : to make Remote Server call
 
 ## REST API
 
@@ -275,3 +279,10 @@ friends = [...friends, "Chandler"] // Pure change
 > npm install json-server@0.17.4 -g
 > json-server -v
 > json-server --watch db.json [from data folder]
+
+## App Structure
+
+- ExpenseService : performs CRUD Operations
+- ExpensesComponent : host all expenses
+- ExpenseItem : individual expense item
+- ExpenseForm : add new expense / edit

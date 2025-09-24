@@ -25,4 +25,13 @@ export class ExpensesComponent implements OnInit {
       this.showForm = !this.showForm;
     });
   }
+
+  onDeleteExpense(expenseId: string) {
+    this.expenseService.deleteExpense(expenseId).subscribe(() => {
+      const position = this.expenseCollection.findIndex(
+        (exp) => exp.id === expenseId
+      );
+      this.expenseCollection.splice(position, 1);
+    });
+  }
 }

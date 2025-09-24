@@ -5,5 +5,12 @@
   <div class="card-body">
     <p>Amount : {{ expense.amount | currency : "INR" }}</p>
     <p>Created At: {{ expense.createdAt | date : "MMM dd, yyyy" }}</p>
+
+    <!-- buttons - edit / delete -->
+
+    <span class="float-end">
+      <button class="btn btn-success btn-sm mx-3">Edit</button>
+      <button class="btn btn-danger btn-sm" (click)="onDelete()">Delete</button>
+    </span>
   </div>
 </div>
