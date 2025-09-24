@@ -286,3 +286,11 @@ friends = [...friends, "Chandler"] // Pure change
 - ExpensesComponent : host all expenses
 - ExpenseItem : individual expense item
 - ExpenseForm : add new expense / edit
+
+# Firebase App
+
+- install Firebase SDK
+  > npm install firebase
+- Save below info -
+  > apiKey: "AIzaSyCClHdnaLcxdP5VL3ZPTaX5GjC_j0jkT1w",
+  > authDomain: "ng-sept-25.firebaseapp.com",

@@ -12,16 +12,19 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class DataService {
-  private fribaseURL =
+  private firebaseURL =
     'https://ng-sept-25-default-rtdb.firebaseio.com/users.json';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   getUserdata() {
-    return this.http.get<Array<IUser>>(this.fribaseURL, {
-      params: new HttpParams().set('auth', this.authService.getToken()),
-    });
+    return this.http.get<Array<IUser>>(this.firebaseURL);
+
+    // return this.http.get<Array<IUser>>(this.firebaseURL, {
+    //   params: new HttpParams().set('auth', this.authService.getToken()),
+    // });
+
     // return this.http.get<Array<IUser>>(
-    //   `${this.fribaseURL}?auth=${this.authService.getToken()}`);
+    //   `${this.firebaseURL}?auth=${this.authService.getToken()}`);
   }
 }
