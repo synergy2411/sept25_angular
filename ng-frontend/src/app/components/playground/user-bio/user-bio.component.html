@@ -13,11 +13,11 @@
 
 <hr />
 
-<div class="row" *ngIf="toggle">
+<div class="row" *ngIf="gender !== ''">
   <div class="col-8 offset-2">
     <h3>
-      Hi {{ username.value | titlecase }}!
-      <span *ngIf="gender !== ''">Your gender is {{ gender | uppercase }}</span>
+      Hi {{ username.value | titlecase }}! Your gender is
+      {{ gender | uppercase }}
     </h3>
   </div>
 </div>

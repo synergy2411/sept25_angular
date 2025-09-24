@@ -9,21 +9,24 @@ import { debounceTime } from 'rxjs';
   styleUrl: './user-bio.component.css',
 })
 export class UserBioComponent implements OnInit {
-  gender!: string;
+  gender: string = '';
   age!: number;
   username = new FormControl('');
-  toggle = false;
 
   constructor(private bioService: UserBioService) {}
 
   ngOnInit(): void {
-    this.username.valueChanges.pipe(debounceTime(2000)).subscribe((value) => {
-      this.toggle = false;
-
-      this.bioService.getUserGender(value).subscribe((bio) => {
-        this.toggle = true;
-        this.gender = bio.gender;
-      });
+    this.username.valueChanges.pipe(debounceTime(1000)).subscribe((value) => {
+      if (value?.trim() != '') {
+        this.bioService
+          .getUserGender(value)
+          .pipe(debounceTime(1000))
+          .subscribe((bio) => {
+            this.gender = bio.gender;
+          });
+      } else {
+        this.gender = '';
+      }
     });
   }
 

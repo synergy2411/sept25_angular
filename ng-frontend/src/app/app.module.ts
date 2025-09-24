@@ -24,6 +24,9 @@ import { CounterService } from './services/counter.service';
 import { ObservableDemoComponent } from './components/playground/observable-demo/observable-demo.component';
 import { UserBioService } from './services/user-bio.service';
 import { UserBioComponent } from './components/playground/user-bio/user-bio.component';
+import { ExpensesComponent } from './components/expenses/expenses/expenses.component';
+import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
+import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { UserBioComponent } from './components/playground/user-bio/user-bio.comp
     CounterTwoComponent,
     ObservableDemoComponent,
     UserBioComponent,
+    ExpensesComponent,
+    ExpenseItemComponent,
+    ExpenseFormComponent,
   ],
   imports: [
     // Modules
