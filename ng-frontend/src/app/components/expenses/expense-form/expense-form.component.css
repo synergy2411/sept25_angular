@@ -1,0 +1,19 @@
+.backdrop {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #444;
+  position: fixed;
+  z-index: 50;
+}
+
+.my-model {
+  top: 20vh;
+  left: 30vw;
+  width: 40vw;
+  background-color: #fff;
+  position: fixed;
+  z-index: 75;
+  padding: 32px;
+}

@@ -1,1 +1,9 @@
-<p>expense-item works!</p>
+<div class="card">
+  <div class="card-header">
+    <h5 class="text-center">{{ expense.title | uppercase }}</h5>
+  </div>
+  <div class="card-body">
+    <p>Amount : {{ expense.amount | currency : "INR" }}</p>
+    <p>Created At: {{ expense.createdAt | date : "MMM dd, yyyy" }}</p>
+  </div>
+</div>

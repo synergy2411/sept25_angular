@@ -1,7 +1,19 @@
 <h1 class="text-center">My Expenses</h1>
 
+<div class="row mb-4">
+  <div class="col-4 offset-4">
+    <div class="d-grid">
+      <button class="btn btn-primary" (click)="showForm = !showForm">
+        Add Expense
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-expense-form *ngIf="showForm"></app-expense-form>
+
 <div class="row">
   <div class="col-4" *ngFor="let expense of expenseCollection">
-    {{ expense | json }}
+    <app-expense-item [expense]="expense"></app-expense-item>
   </div>
 </div>
