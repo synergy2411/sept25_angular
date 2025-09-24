@@ -18,4 +18,11 @@ export class ExpensesComponent implements OnInit {
       .getAllExpenses()
       .subscribe((allExpenses) => (this.expenseCollection = allExpenses));
   }
+
+  onAddNewExpense(expense: IExpense) {
+    this.expenseService.createExpense(expense).subscribe((newExpense) => {
+      this.expenseCollection.push(newExpense);
+      this.showForm = !this.showForm;
+    });
+  }
 }
