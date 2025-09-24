@@ -64,6 +64,14 @@ export class RegisterComponent {
     );
   }
 
+  // User Login
+  onLogin() {
+    this.authService.userLogin(
+      this.registerForm.value.username,
+      this.registerForm.value.password
+    );
+  }
+
   // Custom Validator
   static containExclamationMark(
     control: AbstractControl

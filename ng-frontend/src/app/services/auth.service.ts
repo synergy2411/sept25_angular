@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { Auth, createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +13,7 @@ import { Auth, createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 export class AuthService {
   firebaseApp: FirebaseApp;
   auth: Auth;
+  private token: string = '';
 
   constructor() {
     this.firebaseApp = initializeApp({
@@ -28,5 +34,26 @@ export class AuthService {
     } catch (err) {
       console.error(err);
     }
+  }
+
+  async userLogin(email: string, password: string) {
+    try {
+      const userCreds = await signInWithEmailAndPassword(
+        this.auth,
+        email,
+        password
+      );
+      this.token = await userCreds.user.getIdToken();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  getToken() {
+    return this.token;
+  }
+
+  isAuthenticated() {
+    return this.token.trim() != '';
   }
 }
