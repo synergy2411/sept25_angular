@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "dob": "1975-12-11T18:30:00.000Z",
+      "company": "Microsoft",
+      "isWorking": true,
+      "income": 50000,
+      "votes": 120,
+      "avatar": "./assets/images/bill.jpeg",
+      "comments": [
+        { "stars": 4, "body": "Like the work", "author": "monica@test" },
+        { "stars": 5, "body": "😻 Love your work", "author": "chandler@test" },
+        { "stars": 3, "body": "Just great", "author": "ross@test" }
+      ]
+    },
+    {
+      "firstName": "steve",
+      "lastName": "jobs",
+      "dob": "1968-01-02T18:30:00.000Z",
+      "company": "Apple",
+      "isWorking": false,
+      "income": 0,
+      "votes": 180,
+      "avatar": "./assets/images/steve.jpeg",
+      "comments": [
+        { "stars": 5, "body": "Great initiatives", "author": "joey@test" },
+        { "stars": 4, "body": "👍 Well done", "author": "rachel@test" }
+      ]
+    },
+    {
+      "firstName": "tim b.",
+      "lastName": "lee",
+      "dob": "1972-08-01T18:30:00.000Z",
+      "company": "World Wide Web",
+      "isWorking": true,
+      "income": 25000,
+      "votes": 110,
+      "avatar": "./assets/images/tim.jpeg",
+      "comments": []
+    }
+  ]
+}

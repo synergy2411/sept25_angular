@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { USER_DATA } from '../models/mocks';
 import { IUser } from '../models/user-model';
+import { HttpClient } from '@angular/common/http';
 
 // Self Registration
 // - 'Tree-shaking' (Webpack): Removing unused code from final build
@@ -10,9 +11,12 @@ import { IUser } from '../models/user-model';
   providedIn: 'root',
 })
 export class DataService {
-  constructor() {}
+  private fribaseURL =
+    'https://ng-sept-25-default-rtdb.firebaseio.com/users.json';
 
-  getUserdata(): Array<IUser> {
-    return USER_DATA;
+  constructor(private http: HttpClient) {}
+
+  getUserdata() {
+    return this.http.get<Array<IUser>>(this.fribaseURL);
   }
 }

@@ -45,7 +45,14 @@
       <div class="row">
         <div class="col-6">
           <div class="d-grid">
-            <button class="btn btn-primary" type="submit">
+            <button
+              class="btn"
+              type="submit"
+              [ngClass]="{
+                'btn-success': expense,
+                'btn-primary': expense === undefined
+              }"
+            >
               {{ expense ? "Edit" : "Add" }}
             </button>
           </div>
