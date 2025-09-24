@@ -9,7 +9,9 @@
     <!-- buttons - edit / delete -->
 
     <span class="float-end">
-      <button class="btn btn-success btn-sm mx-3">Edit</button>
+      <button class="btn btn-success btn-sm mx-3" (click)="onEdit()">
+        Edit
+      </button>
       <button class="btn btn-danger btn-sm" (click)="onDelete()">Delete</button>
     </span>
   </div>

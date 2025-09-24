@@ -11,6 +11,9 @@ export class ExpensesComponent implements OnInit {
   expenseCollection!: Array<IExpense>;
   showForm = false;
 
+  showEditableForm = false;
+  editableExpense!: IExpense;
+
   constructor(private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
@@ -32,6 +35,21 @@ export class ExpensesComponent implements OnInit {
         (exp) => exp.id === expenseId
       );
       this.expenseCollection.splice(position, 1);
+    });
+  }
+
+  onEditExpense(expense: IExpense) {
+    this.editableExpense = expense;
+    this.showEditableForm = !this.showEditableForm;
+  }
+
+  onEditExpenseEvent(expense: IExpense) {
+    this.expenseService.updateExpense(expense).subscribe((editedExpense) => {
+      const position = this.expenseCollection.findIndex(
+        (exp) => exp.id === editedExpense.id
+      );
+      this.expenseCollection[position] = editedExpense;
+      this.showEditableForm = !this.showEditableForm;
     });
   }
 }

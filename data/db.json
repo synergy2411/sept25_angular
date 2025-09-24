@@ -2,14 +2,14 @@
   "expenses": [
     {
       "id": "e002",
-      "title": "planting",
-      "amount": 69,
+      "title": "pot the plants",
+      "amount": 99,
       "createdAt": "2024-12-11"
     },
     {
       "id": "e003",
       "title": "insurance",
-      "amount": 199,
+      "amount": 149,
       "createdAt": "2025-01-04"
     },
     {

@@ -9,6 +9,7 @@ import { IExpense } from '../../../models/expense-model';
 export class ExpenseItemComponent {
   @Input() expense!: IExpense;
   @Output() onDeleteEvent = new EventEmitter<string>();
+  @Output() onEditEvent = new EventEmitter<IExpense>();
 
   onDelete() {
     if (
@@ -21,5 +22,9 @@ export class ExpenseItemComponent {
       return this.onDeleteEvent.emit(this.expense.id);
     }
     return;
+  }
+
+  onEdit() {
+    this.onEditEvent.emit(this.expense);
   }
 }

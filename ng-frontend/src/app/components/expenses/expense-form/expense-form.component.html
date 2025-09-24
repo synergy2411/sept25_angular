@@ -1,6 +1,6 @@
 <div class="backdrop">
   <div class="my-model">
-    <h3 class="text-center">Add Your Expense</h3>
+    <h3 class="text-center">{{ title | titlecase }}</h3>
     <form (ngSubmit)="onSubmitForm()" [formGroup]="expenseForm">
       <!-- title -->
       <div class="form-floating mb-3">
@@ -45,7 +45,9 @@
       <div class="row">
         <div class="col-6">
           <div class="d-grid">
-            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-primary" type="submit">
+              {{ expense ? "Edit" : "Add" }}
+            </button>
           </div>
         </div>
         <div class="col-6">
