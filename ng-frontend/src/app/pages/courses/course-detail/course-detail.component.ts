@@ -37,7 +37,7 @@ export class CourseDetailComponent implements OnInit {
 
   onDelete(courseId: string) {
     this.courseService.deleteCourse(courseId).subscribe(() => {
-      this.router.navigateByUrl('/courses?ondelete=true');
+      this.router.navigateByUrl('/courses?onDelete=true');
     });
   }
 }

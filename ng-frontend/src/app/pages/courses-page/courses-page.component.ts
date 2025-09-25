@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICourse } from '../../models/course-model';
 import { CourseService } from '../../services/course.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-page',
@@ -11,9 +11,23 @@ import { Router } from '@angular/router';
 export class CoursesPageComponent implements OnInit {
   allCourses!: Array<ICourse>;
 
-  constructor(private courseService: CourseService, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CourseService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((query: any) => {
+      if (query.onDelete) {
+        this.fetchCourses();
+      }
+    });
+
+    this.fetchCourses();
+  }
+
+  private fetchCourses() {
     this.courseService
       .getCourses()
       .subscribe((courses) => (this.allCourses = courses));
