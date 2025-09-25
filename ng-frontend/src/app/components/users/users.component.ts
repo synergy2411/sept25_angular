@@ -24,4 +24,10 @@ export class UsersComponent implements OnInit {
   onMoreInfo(user: IUser) {
     alert(`Mr. ${user.lastName} works with ${user.company}!!`);
   }
+
+  shouldExit() {
+    return confirm(
+      'Do you wish to leave this page? You have some unsaved changes.'
+    );
+  }
 }

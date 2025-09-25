@@ -4,6 +4,7 @@ import { UsersComponent } from './components/users/users.component';
 import { ExpensesComponent } from './components/expenses/expenses/expenses.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthGuardService } from './services/guards/auth-guard.service';
+import { RouteGuardService } from './services/guards/route-guard.service';
 
 export const APP_ROUTES: Routes = [
   {
@@ -19,6 +20,7 @@ export const APP_ROUTES: Routes = [
     path: 'users', // http://localhost:4200/users
     component: UsersComponent,
     canActivate: [AuthGuardService],
+    canDeactivate: [RouteGuardService],
   },
   {
     path: 'expenses', // http://localhost:4200/expenses
