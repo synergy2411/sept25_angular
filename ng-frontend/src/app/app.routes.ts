@@ -5,6 +5,8 @@ import { ExpensesComponent } from './components/expenses/expenses/expenses.compo
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthGuardService } from './services/guards/auth-guard.service';
 import { RouteGuardService } from './services/guards/route-guard.service';
+import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
+import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -25,6 +27,16 @@ export const APP_ROUTES: Routes = [
   {
     path: 'expenses', // http://localhost:4200/expenses
     component: ExpensesComponent,
+  },
+  {
+    path: 'courses', // http://localhost:4200/courses
+    component: CoursesPageComponent,
+    children: [
+      {
+        path: ':courseId', // http://localhost:4200/courses/c001 // Route Parameter
+        component: CourseDetailComponent,
+      },
+    ],
   },
   {
     path: '**', // URL Path does not match with the configuration

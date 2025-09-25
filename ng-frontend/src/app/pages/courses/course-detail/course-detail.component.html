@@ -1,0 +1,28 @@
+<div class="backdrop">
+  <div class="my-model">
+    <div class="text-center">
+      <h4>{{ course.title | uppercase }}</h4>
+      <p>Duration : {{ course.duration }}</p>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="d-grid">
+            <button class="btn btn-primary" (click)="onSeeAllCourses()">
+              See All Courses
+            </button>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-grid">
+            <button
+              class="btn btn-outline-danger"
+              (click)="onDelete(course.id)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

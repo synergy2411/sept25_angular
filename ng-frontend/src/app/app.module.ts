@@ -35,6 +35,8 @@ import { NetworkErrorInterceptor } from './services/interceptors/network-error-h
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
+import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
+import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { HeaderComponent } from './components/header/header.component';
     ExpenseFormComponent,
     PageNotFoundComponent,
     HeaderComponent,
+    CoursesPageComponent,
+    CourseDetailComponent,
   ],
   imports: [
     // Modules
