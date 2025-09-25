@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import {
   Auth,
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 
 @Injectable({
@@ -15,7 +17,7 @@ export class AuthService {
   auth: Auth;
   private token: string = '';
 
-  constructor() {
+  constructor(private router: Router) {
     this.firebaseApp = initializeApp({
       apiKey: 'AIzaSyCClHdnaLcxdP5VL3ZPTaX5GjC_j0jkT1w',
       authDomain: 'ng-sept-25.firebaseapp.com',
@@ -44,6 +46,9 @@ export class AuthService {
         password
       );
       this.token = await userCreds.user.getIdToken();
+      // localStorage.setItem('token', this.token);
+      sessionStorage.setItem('token', this.token);
+      this.router.navigateByUrl('/users');
     } catch (err) {
       console.error(err);
     }
@@ -55,5 +60,13 @@ export class AuthService {
 
   isAuthenticated() {
     return this.token.trim() != '';
+  }
+
+  userLogout() {
+    signOut(this.auth).then(() => {
+      this.token = '';
+      this.router.navigateByUrl('/auth');
+      sessionStorage.removeItem('token');
+    });
   }
 }

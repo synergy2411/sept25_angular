@@ -311,4 +311,8 @@ friends = [...friends, "Chandler"] // Pure change
 - Fast
 - Better UI/UX
 
+## Routing Terminologies
+
+- Router Service : Programmatic Navigation
+
 # Multi Module App

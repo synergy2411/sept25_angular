@@ -1,15 +1,29 @@
 <header>
-  <nav>
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/auth">Login/Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/expenses">Expenses</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/users">Users</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="row">
+    <div class="col-10">
+      <nav>
+        <ul class="nav nav-tabs">
+          <li class="nav-item" *ngIf="!authService.isAuthenticated()">
+            <a class="nav-link" routerLink="/auth">Login/Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/expenses">Expenses</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated()">
+            <a class="nav-link" routerLink="/users">Users</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-2" *ngIf="authService.isAuthenticated()">
+      <div class="d-grid">
+        <button
+          class="btn btn-outline-danger"
+          (click)="authService.userLogout()"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
 </header>
