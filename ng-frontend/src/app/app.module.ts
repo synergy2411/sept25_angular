@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -29,6 +29,8 @@ import { ExpenseItemComponent } from './components/expenses/expense-item/expense
 import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
 import { LoggerInterceptor } from './services/interceptors/logging.interceptor';
 import { AuthInterceptor } from './services/interceptors/auth.interceptor';
+import { GlobalErrorHandlerService } from './services/global-error-handler.service';
+import { NetworkErrorInterceptor } from './services/interceptors/network-error-handler.interceptor';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,15 @@ import { AuthInterceptor } from './services/interceptors/auth.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService,
     },
   ], // Services Registration
   bootstrap: [AppComponent],
