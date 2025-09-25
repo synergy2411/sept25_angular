@@ -13,8 +13,8 @@ export class LoggerInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('[LOGGER INTERCEPTOR WORKS]');
-    console.log('REQUEST : ', req);
+    // console.log('[LOGGER INTERCEPTOR WORKS]');
+    // console.log('REQUEST : ', req);
     return next.handle(req);
   }
 }

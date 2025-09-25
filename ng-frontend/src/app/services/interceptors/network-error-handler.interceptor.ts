@@ -14,7 +14,7 @@ export class NetworkErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
-      tap((value) => console.log('[TAP]', value)),
+      // tap((value) => console.log('[TAP]', value)),
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           console.warn('Unauthorired');

@@ -23,12 +23,15 @@ export class CourseDetailComponent implements OnInit {
     //   this.route.snapshot.params['courseId']
     // );
 
-    this.route.params.subscribe((params) => {
-      console.log('Subscribed Params : ', params['courseId']);
-      this.courseService
-        .getCourse(params['courseId'])
-        .subscribe((theCourse) => (this.course = theCourse));
-    });
+    // Course Data from Resolver (pre-fetching the data before component loads on UI)
+    this.course = this.route.snapshot.data['courseData'];
+
+    // this.route.params.subscribe((params) => {
+    //   // console.log('Subscribed Params : ', params['courseId']);
+    //   this.courseService
+    //     .getCourse(params['courseId'])
+    //     .subscribe((theCourse) => (this.course = theCourse));
+    // });
   }
 
   onSeeAllCourses() {

@@ -7,6 +7,8 @@ import { AuthGuardService } from './services/guards/auth-guard.service';
 import { RouteGuardService } from './services/guards/route-guard.service';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
+import { RootLayoutComponent } from './pages/root-layout/root-layout.component';
+import { CourseResolverService } from './services/guards/course-resolver.service';
 
 export const APP_ROUTES: Routes = [
   {
@@ -35,6 +37,7 @@ export const APP_ROUTES: Routes = [
       {
         path: ':courseId', // http://localhost:4200/courses/c001 // Route Parameter
         component: CourseDetailComponent,
+        resolve: { courseData: CourseResolverService },
       },
     ],
   },
