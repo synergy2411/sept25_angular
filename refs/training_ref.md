@@ -280,6 +280,10 @@ friends = [...friends, "Chandler"] // Pure change
 > json-server -v
 > json-server --watch db.json [from data folder]
 
+## Expenses App
+
+- CRUD Operations
+
 ## App Structure
 
 - ExpenseService : performs CRUD Operations
@@ -294,3 +298,17 @@ friends = [...friends, "Chandler"] // Pure change
 - Save below info -
   > apiKey: "AIzaSyCClHdnaLcxdP5VL3ZPTaX5GjC_j0jkT1w",
   > authDomain: "ng-sept-25.firebaseapp.com",
+
+# Error Handling
+
+- ErrorHandler Interface
+
+# Single Page Apps
+
+- One HTML Page
+- Do not re-render / refresh the complete page
+- App is bundled and sent over to client in one go
+- Fast
+- Better UI/UX
+
+# Multi Module App

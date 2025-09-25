@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -31,6 +32,9 @@ import { LoggerInterceptor } from './services/interceptors/logging.interceptor';
 import { AuthInterceptor } from './services/interceptors/auth.interceptor';
 import { GlobalErrorHandlerService } from './services/global-error-handler.service';
 import { NetworkErrorInterceptor } from './services/interceptors/network-error-handler.interceptor';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { APP_ROUTES } from './app.routes';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import { NetworkErrorInterceptor } from './services/interceptors/network-error-h
     ExpensesComponent,
     ExpenseItemComponent,
     ExpenseFormComponent,
+    PageNotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     // Modules
@@ -63,6 +69,7 @@ import { NetworkErrorInterceptor } from './services/interceptors/network-error-h
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
     CounterService,

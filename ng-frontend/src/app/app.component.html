@@ -1,5 +1,9 @@
 <div class="container">
+  <app-header></app-header>
+
   <h1>App Works!</h1>
+
+  <router-outlet></router-outlet>
 
   <!-- UI REUSABLE BUTTON COMPONENT -->
   <!-- <app-button (btnClickEvent)="onSuccess()" [favColor]="'blue'"
@@ -15,7 +19,7 @@
 
   <!-- <app-pipe-demo></app-pipe-demo> -->
 
-  <app-register></app-register>
+  <!-- <app-register></app-register> -->
 
   <!-- <app-counter-one></app-counter-one>
 
@@ -30,5 +34,5 @@
   <!-- <app-expenses></app-expenses> -->
 
   <!-- <hr /> -->
-  <app-users *ngIf="authService.isAuthenticated()"></app-users>
+  <!-- <app-users *ngIf="authService.isAuthenticated()"></app-users> -->
 </div>
