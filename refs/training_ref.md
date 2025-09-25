@@ -311,6 +311,14 @@ friends = [...friends, "Chandler"] // Pure change
 - Fast
 - Better UI/UX
 
+## Courses App (http://localhost:3000/courses)
+
+- Pages
+- CoursesPage
+- CourseItemComponent
+- CourseFormPage
+  > CourseFormComponent
+
 ## Routing Terminologies
 
 - Router Service : Programmatic Navigation

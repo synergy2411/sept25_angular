@@ -18,5 +18,27 @@
       "createdAt": "2025-09-17",
       "id": "nf--qq1"
     }
+  ],
+  "courses": [
+    {
+      "id": "c001",
+      "title": "Angular 101",
+      "duration": 40
+    },
+    {
+      "id": "c002",
+      "title": "Refresh React",
+      "duration": 20
+    },
+    {
+      "id": "c003",
+      "title": "Beginning NodeJS",
+      "duration": 60
+    },
+    {
+      "id": "c004",
+      "title": "Spring in Java",
+      "duration": 80
+    }
   ]
 }
