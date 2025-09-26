@@ -347,3 +347,13 @@ friends = [...friends, "Chandler"] // Pure change
 > ng ng new-app
 
 # Testing
+
+## Fixture
+
+- Component Instance
+- Template: nativeElement / debugElement
+- detectChanges()
+
+## Code Covergae
+
+> ng serve --code-coverage

@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './child.component.html',
-  styleUrl: './child.component.css'
+  styleUrl: './child.component.css',
 })
 export class ChildComponent {
-
+  username = 'Monica Geller';
 }
