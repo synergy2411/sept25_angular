@@ -2,7 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -38,6 +38,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 import { RootLayoutComponent } from './pages/root-layout/root-layout.component';
+import { IAmEagerModule } from './modules/i-am-eager/i-am-eager.module';
+import { IAmLazyModule } from './modules/i-am-lazy/i-am-lazy.module';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,8 @@ import { RootLayoutComponent } from './pages/root-layout/root-layout.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, { preloadingStrategy: PreloadAllModules }),
+    IAmEagerModule,
   ],
   providers: [
     CounterService,

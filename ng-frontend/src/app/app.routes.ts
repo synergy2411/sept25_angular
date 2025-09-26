@@ -9,6 +9,7 @@ import { CoursesPageComponent } from './pages/courses-page/courses-page.componen
 import { CourseDetailComponent } from './pages/courses/course-detail/course-detail.component';
 import { RootLayoutComponent } from './pages/root-layout/root-layout.component';
 import { CourseResolverService } from './services/guards/course-resolver.service';
+import { IAmLazyModule } from './modules/i-am-lazy/i-am-lazy.module';
 
 export const APP_ROUTES: Routes = [
   {
@@ -40,6 +41,13 @@ export const APP_ROUTES: Routes = [
         resolve: { courseData: CourseResolverService },
       },
     ],
+  },
+  {
+    path: 'lazy',
+    loadChildren: () =>
+      import('./modules/i-am-lazy/i-am-lazy.module').then(
+        (m) => m.IAmLazyModule
+      ),
   },
   {
     path: '**', // URL Path does not match with the configuration

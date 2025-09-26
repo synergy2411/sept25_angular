@@ -322,5 +322,24 @@ friends = [...friends, "Chandler"] // Pure change
 ## Routing Terminologies
 
 - Router Service : Programmatic Navigation
+- Routes: Route configurations
+- ActivatedRoute Service: access of current URL Path
+  > Query Parameter
+  > Route Parameter
+- Guards:
+  > CanActivate: allows / disallows to enter into particular route
+  > CanDeactivate: allows / disallows to exit from the active route
+  > Resolve: pre-fetching the data
+- Nested Routing / Child Routing
+- Page Not Found Functionality using "\*\*"
+- Redirect: "redirectTo"
 
 # Multi Module App
+
+- Lazy Loading
+
+# Testing
+
+# Latest Angular Code
+
+# App Optimization / Debugging
