@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -14,6 +14,7 @@ import { AuthService } from '../../../services/auth.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent {
   // formBuilder = inject(FormBuilder)
@@ -58,6 +59,7 @@ export class RegisterComponent {
     // console.log('Username : ', this.registerForm.value.username);
     // console.log('Password : ', this.registerForm.value.password);
     console.log(this.registerForm.value);
+    debugger;
     this.authService.createUser(
       this.registerForm.value.username,
       this.registerForm.value.password
@@ -66,6 +68,7 @@ export class RegisterComponent {
 
   // User Login
   onLogin() {
+    debugger;
     this.authService.userLogin(
       this.registerForm.value.username,
       this.registerForm.value.password

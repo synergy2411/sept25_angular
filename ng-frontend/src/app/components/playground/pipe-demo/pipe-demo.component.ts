@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-pipe-demo',
@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './pipe-demo.component.css',
 })
 export class PipeDemoComponent {
+  constructor(private cdRef: ChangeDetectorRef) {}
+
+  stopDetection() {
+    this.cdRef.detach();
+    // Code written here will not affect angular digest cycle
+    // - Third Party Widget
+    this.cdRef.reattach();
+  }
+
   futureValue = new Promise((resolve, reject) => {
     setTimeout(() => resolve('the future value arrived in your app'), 2000);
   });
@@ -15,10 +24,10 @@ export class PipeDemoComponent {
   filteredStatus = '';
 
   todoCollection = [
-    { label: 'buy the grocery', status: 'pending' },
-    { label: 'renew car insurance', status: 'completed' },
-    { label: 'pot the plants', status: 'pending' },
-    { label: 'clean the carpet', status: 'pending' },
+    { id: 't001', label: 'buy the grocery', status: 'pending' },
+    { id: 't002', label: 'renew car insurance', status: 'completed' },
+    { id: 't003', label: 'pot the plants', status: 'pending' },
+    { id: 't004', label: 'clean the carpet', status: 'pending' },
   ];
 
   onAddItem() {
@@ -26,9 +35,17 @@ export class PipeDemoComponent {
 
     this.todoCollection = [
       ...this.todoCollection,
-      { label: 'New Todo Item', status: 'pending' },
+      {
+        id: 't00' + this.todoCollection.length + 1,
+        label: 'New Todo Item',
+        status: 'pending',
+      },
     ];
 
     console.log('Collection Lenght : ', this.todoCollection.length);
+  }
+
+  trackById(todo: { id: string; label: string; status: string }) {
+    return todo.id;
   }
 }
