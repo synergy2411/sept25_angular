@@ -338,8 +338,12 @@ friends = [...friends, "Chandler"] // Pure change
 
 - Lazy Loading
 
-# Testing
+# App Optimization / Debugging
 
 # Latest Angular Code
 
-# App Optimization / Debugging
+> ng new ng-frontend --no-standalone --no-routing
+
+> ng ng new-app
+
+# Testing

@@ -1,0 +1,15 @@
+<h2>Output Component</h2>
+
+<h4>Counter Signal : {{ counter() }}</h4>
+
+<h4>Square Signal : {{ square() }}</h4>
+
+<button (click)="onIncrease()">Increment</button>
+
+<ul>
+  <li *ngFor="let friend of friends">
+    {{ friend | uppercase }}
+  </li>
+</ul>
+
+<app-child></app-child>
