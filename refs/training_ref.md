@@ -357,3 +357,11 @@ friends = [...friends, "Chandler"] // Pure change
 ## Code Covergae
 
 > ng serve --code-coverage
+
+# Build the Project
+
+> ng build / npm run build
+
+> npm install http-server -g
+
+> http-server (from the dist/app-name/browser folder)

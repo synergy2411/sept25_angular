@@ -1,12 +1,6 @@
 {
   "expenses": [
     {
-      "id": "e002",
-      "title": "pot the plants",
-      "amount": 99,
-      "createdAt": "2024-12-11"
-    },
-    {
       "id": "e003",
       "title": "insurance",
       "amount": 149,
@@ -17,14 +11,15 @@
       "amount": 89,
       "createdAt": "2025-09-17",
       "id": "nf--qq1"
+    },
+    {
+      "title": "Carpet",
+      "amount": 199,
+      "createdAt": "2025-09-04",
+      "id": "T6pUOrI"
     }
   ],
   "courses": [
-    {
-      "id": "c001",
-      "title": "Angular 101",
-      "duration": 40
-    },
     {
       "id": "c003",
       "title": "Beginning NodeJS",
